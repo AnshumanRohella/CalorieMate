@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/anshumanrohella/Documents/workspace/CalorieMate/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="97e7493d0302c9189ad4401156870a11403ee1b4">
+        <dex dex="/Users/anshumanrohella/Documents/workspace/CalorieMate/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_edea1abfa8cf649b47fb1a695ae300178288f452/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/anshumanrohella/Documents/workspace/CalorieMate/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/anshumanrohella/Documents/workspace/CalorieMate/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_6c1917164d459eb40671eb0d8997b8d4434235fb/classes.dex" />
+    </item>
+
+</items>

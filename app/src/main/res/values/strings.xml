@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CalorieMate</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_weeklyroutine">How much do you exercise ?</string>
+</resources>
