@@ -22,6 +22,10 @@
         <activity
             android:name=".weeklyroutine"
             android:label="@string/title_activity_weeklyroutine"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".cal_amount"
+            android:label="@string/title_activity_cal_amount"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
