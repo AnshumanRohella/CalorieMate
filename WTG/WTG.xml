@@ -1,0 +1,28 @@
+<WindowsTransitionGraph>
+	<Activity name="com.myapp.caloriemate.MainActivity" >
+		<View Type="android.view.MenuItem" Event="implicit_power_event" Destination="com.myapp.caloriemate.MainActivity" ID="null" />
+		<View Type="android.view.MenuItem" Event="implicit_home_event" Destination="com.myapp.caloriemate.MainActivity" ID="null" />
+		<View Type="android.widget.RadioButton" Event="click" Destination="com.myapp.caloriemate.MainActivity" ID="radioButton2" />
+		<View Type="android.widget.Button" Event="click" Destination="com.myapp.caloriemate.MainActivity" ID="next_button" />
+		<View Type="android.widget.RadioButton" Event="click" Destination="com.myapp.caloriemate.MainActivity" ID="radioButton" />
+		<View Type="android.view.MenuItem" Event="implicit_back_event" Destination="LAUNCHER_NODE[]1476" ID="null" />
+		<View Type="android.view.MenuItem" Event="implicit_rotate_event" Destination="com.myapp.caloriemate.MainActivity" ID="null" />
+		<View Type="android.widget.Button" Event="click" Destination="com.myapp.caloriemate.weeklyroutine" ID="next_button" />
+	</Activity>
+	<Activity name="com.myapp.caloriemate.weeklyroutine" >
+		<View Type="android.widget.Button" Event="click" Destination="com.myapp.caloriemate.cal_amount" ID="calc_calories" />
+		<View Type="android.view.MenuItem" Event="implicit_home_event" Destination="com.myapp.caloriemate.weeklyroutine" ID="null" />
+		<View Type="android.view.MenuItem" Event="implicit_rotate_event" Destination="com.myapp.caloriemate.weeklyroutine" ID="null" />
+		<View Type="android.view.MenuItem" Event="implicit_back_event" Destination="com.myapp.caloriemate.MainActivity" ID="null" />
+		<View Type="android.view.MenuItem" Event="implicit_power_event" Destination="com.myapp.caloriemate.weeklyroutine" ID="null" />
+	</Activity>
+	<Activity name="LAUNCHER_NODE[]1476" >
+		<View Type="LAUNCHER_NODE[]1476" Event="implicit_launch_event" Destination="com.myapp.caloriemate.MainActivity" ID="LAUNCHER_NODE[]1476" />
+	</Activity>
+	<Activity name="com.myapp.caloriemate.cal_amount" >
+		<View Type="android.view.MenuItem" Event="implicit_rotate_event" Destination="com.myapp.caloriemate.cal_amount" ID="null" />
+		<View Type="android.view.MenuItem" Event="implicit_home_event" Destination="com.myapp.caloriemate.cal_amount" ID="null" />
+		<View Type="android.view.MenuItem" Event="implicit_back_event" Destination="com.myapp.caloriemate.weeklyroutine" ID="null" />
+		<View Type="android.view.MenuItem" Event="implicit_power_event" Destination="com.myapp.caloriemate.cal_amount" ID="null" />
+	</Activity>
+</WindowsTransitionGraph>

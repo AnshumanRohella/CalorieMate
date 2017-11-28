@@ -1,5 +1,6 @@
 package com.myapp.caloriemate;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -16,7 +17,7 @@ import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends Activity {
 
     EditText weight;
     EditText age;
@@ -30,9 +31,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String weight_val;
     String age_val;
     String height_val;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,109 +49,75 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         age_val = "";
         height_val= "";
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-        next.setOnClickListener(this);
-        system_select.setOnClickListener(this);
-        male.setOnClickListener(this);
-        female.setOnClickListener(this);
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch(view.getId()){
-            case R.id.next_button:{
-               if(weight.getText().toString().compareTo("") == 0)
+                if(weight.getText().toString().compareTo("") == 0)
                 {
                     Toast.makeText(getApplicationContext(),"Please enter weight",Toast.LENGTH_SHORT).show();
-
-                    break;
+                    return;
                 }
                 else
                     weight_val =  weight.getText().toString();
                 if(age.getText().toString().compareTo("") == 0)
                 {
                     Toast.makeText(getApplicationContext(),"Please enter age",Toast.LENGTH_SHORT).show();
-                    break;
+                    return;
                 }
                 else
                     age_val =  age.getText().toString();
                 if(height.getText().toString().compareTo("") == 0)
                 {
                     Toast.makeText(getApplicationContext(),"Please enter height",Toast.LENGTH_SHORT).show();
-                    break;
+
                 }
                 else
                     height_val =  height.getText().toString();
-                Intent i =  new Intent(this,weeklyroutine.class);
 
-                i.putExtra("System",system);
-                i.putExtra("age",age_val);
-                i.putExtra("height",height_val);
-                i.putExtra("weight",weight_val);
-                i.putExtra("gender",gender);
-                startActivity(i);
-
-                break;
-
+                start_weekly_routine();
 
             }
-            case R.id.switch1:
-            {
+        });
+        system_select.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 if(findViewById(R.id.switch1).isActivated())
                 {
                     system =  "Imperial";
                 }
                 else
                     system = "Metric";
-                break;
             }
-            case R.id.radioButton:
-                if(findViewById(R.id.radioButton).isSelected()) {
+        });
+        male.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(view.isSelected())
                     gender = "Male";
+            }
+        });
+        female.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gender = "Female";
+            }
+        });
 
-                }
-                break;
-            case R.id.radioButton2:
-                if(findViewById(R.id.radioButton2).isSelected())
-                {
-                    gender = "Female";
-
-                }
-                break;
-        }
     }
+
+
+    private void start_weekly_routine(){
+        Intent i =  new Intent(this,weeklyroutine.class);
+
+        i.putExtra("System",system);
+        i.putExtra("age",age_val);
+        i.putExtra("height",height_val);
+        i.putExtra("weight",weight_val);
+        i.putExtra("gender",gender);
+        startActivity(i);
+
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.myapp.caloriemate;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -11,7 +12,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-public class cal_amount extends AppCompatActivity {
+public class cal_amount extends Activity {
 
     Intent curr;
     TextView maintain;
@@ -28,17 +29,6 @@ public class cal_amount extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cal_amount);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
          curr = getIntent();
 
